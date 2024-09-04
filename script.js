@@ -40,10 +40,9 @@ document.addEventListener("DOMContentLoaded", (e) => {
   // Filtra solo los elementos de tipo String
   const stringElements = strangeArray.filter(element => typeof element === 'string');
 
-  // Ordena alfabéticamente los elementos filtrados
-  stringElements.sort();
+  // Ordena alfabéticamente los elementos filtrados sin distinguir mayúsculas de minúsculas
+  stringElements.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
 
   // Muestra el array filtrado y ordenado en la página web
   showList(stringElements);
 });
-
